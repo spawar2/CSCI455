@@ -81,8 +81,42 @@ actual_prediction_values
 152      52   34.91597
 153      41   34.65100
 
+------------------------------------------------------------
+
+# Load the dataset
+data <- airquality
+
+# Remove all the rows with NA's
+New_data <- data[complete.cases(data),]
+
+# Take average for Ozone
 mean(New_data$Ozone)
 
+# Replace all NA's in Ozone with above average
 data$Ozone[is.na(data$Ozone)] <- 42
+
+# Take average for Solar.R
+mean(New_data$Solar.R)
+
+# Replace all NA's in Solar.R with average 185
+data$Solar.R[is.na(data$Solar.R)] <- 185
+
+# cbind and rbind functions
+variable1 <- c(1:100)
+
+variable2 <- c(101:200)
+
+variable3 <- cbind(variable1, variable2)
+
+variable4 <- c(1:99)
+
+cbind(variable1, variable2, variable4)
+
+
+
+
+
+
+
 
 
